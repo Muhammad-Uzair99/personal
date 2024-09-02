@@ -42,8 +42,8 @@
           </span>
         </li>
       </ul>
-      <!-- 
-	  <ul class='text-[0.5rem] absolute right-0 top-10 w-28 leading-4' id='buyers-list'>
+      
+	    <ul class='text-[0.5rem] absolute right-0 top-10 w-28 leading-4' id='buyers-list'>
         <li class=''>
           🔥<span class='bg-gradient-to-b from-[#E8E8F5] via-[#E8E8F5] to-[#E8E8F5] inline-block text-transparent bg-clip-text'><span id='buyer0'>Alex</span> just bought!</span>🔥
         </li>
@@ -52,7 +52,69 @@
         </li>
         <li class='bg-gradient-to-b from-[#E8E8F5] via-[#010104] to-[#010104] inline-block text-transparent bg-clip-text'>🔥<span id='buyer2'>Jim</span> just bought!🔥</li>
       </ul>
-	 -->
+      <script>
+        const firstNames = [
+          "Millie", "Julius", "Milani", "Kian", "Evelyn", "Bruce", "Scout", "Kamari", "Khaleesi", "Henrik", "Adelina", "Ivan",
+          "Andrea", "Abdiel", "Lilliana", "Briar", "Zelda", "Roger", "Gwen", "Koa", "Frida", "Rory", "Kinley", "Graysen", 
+          "Nathalia", "Paxton", "Jocelyn", "Cohen", "Holland", "Uriel", "Dylan", "Ronan", "Rebecca", "Mathew", "Cecilia", 
+          "August", "Camila", "Cory", "Amiyah", "Harry", "Ella", "Davis", "Lucille", "Noe", "Shay", "Frederick", "Camilla", 
+          "Bode", "Ashlynn", "Lionel", "Makenna", "Lukas", "Angie", "Caiden", "Karen", "Kace", "Everleigh", "Nasir", "Viviana", 
+          "Everett", "Eve", "Carter", "Lauryn", "Kristopher", "Emma", "Dario", "Malayah", "Cedric", "Cecelia", "Calvin", 
+          "Kassidy", "Johnny", "Milani", "Skyler", "Denver", "Bodie", "Collins", "Trevor", "Lylah", "Zander", "Saige", 
+          "Finnegan", "Shay", "Brixton", "Kendra", "Calum", "Legacy", "Sawyer", "Adriana", "Logan", "Aria", "Soren", "Vienna", 
+          "Timothy", "Karsyn", "Albert", "Kairi", "Elisha", "Lyra", "Zaire", "Kennedy", "Kye", "Amalia", "Kendrick", 
+          "Magnolia", "Jagger", "Isabella", "Juan", "Chana", "Derrick", "Mina", "Jasper", "Haisley", "Mccoy", "Melany", 
+          "Aden", "Liberty", "Tobias", "Makenzie", "George", "Emily", "Walter", "Halo", "Seven", "Princess", "Genesis", 
+          "Raelynn", "Luke", "Makenzie", "Kolton", "Kassidy", "Julio", "Laila", "Lukas", "Kiara", "Jayden", "Maisie", 
+          "Ben", "Carolina", "Judah", "Avianna", "Grant", "Isabel", "Josiah", "Scarlet", "Wes", "Paisley", "Izaiah", 
+          "Margo", "Arthur", "Ashlyn", "Aziel", "Annika", "Jordan", "Carly", "Kyree", "Dani", "Owen", "Yasmin", "Talon", 
+          "Alaina", "Lyric", "Flora", "Kendrick", "Jordan", "Hudson", "Camilla", "Aydin", "Violet", "Kyler", "Addisyn", 
+          "Griffin", "Saige", "Cruz", "Francesca", "Aziel", "Kamiyah", "King", "Holland", "Mylo", "Journey", "Ezra", "Freya", 
+          "Leland", "Juliet", "Finnegan", "Gloria", "River", "Ensley", "Ivan", "Reign", "Adonis", "Karen", "Aden", 
+          "Francesca", "Elisha", "Kairi", "Yousef", "Brinley", "Reed", "Camille", "Alex", "Claire", "Brendan", "Anaya", 
+          "Santino", "Melody", "Kobe", "Ariella", "Hakeem", "Coraline", "Tyson", "Gemma", "Anakin", "Julianna", "Patrick", 
+          "Adele", "Elisha", "Maddison", "Julius", "Monroe", "Aziel", "Talia", "Blaine", "Lea", "Peyton", "Cynthia", "Chris", 
+          "Brooke", "Blaine", "Kaitlyn", "Cain", "Ashlyn", "Marvin", "Quinn", "Memphis", "Amaris", "Diego", "Gemma", 
+          "Misael", "Evangeline", "Hunter", "Kai", "Arlo", "Giavanna", "Troy", "Giana", "Jaxx", "Eden", "Thaddeus", 
+          "Hadley", "Jacob", "Jessie", "Kamari", "Brielle", "Jovanni", "Clementine", "Lucas", "Sarai", "Magnus", 
+          "Alejandra", "Larry", "Stormi", "Raylan", "Elisabeth", "Gregory", "Elsa", "Daxton", "Whitney", "Ibrahim", 
+          "Clarissa", "Kyng", "Amaris", "Alijah", "Mavis", "Johnny", "Elliana", "Kase", "Bellamy", "Apollo", "Ila", "Rowen", 
+          "Hannah", "Wes", "Virginia", "Hezekiah", "Esme", "Quentin", "Adelina", "Robin", "Denisse", "Lennon", "Makayla", 
+          "Francisco", "Ophelia", "Trace", "Baylee", "Bentlee", "Kehlani", "Desmond", "Alicia", "Alexander", "Katie", 
+          "Jordan", "Jaylah", "Kaleb", "Alina", "Dalton", "Anais", "Skyler", "Karla", "Deacon", "Harmony", "Makai", 
+          "Irene", "Landry", "Lauryn", "Azariah", "Carter", "Jakob", "Kensley", "Frederick", "Andrea", "Layton", 
+          "Kailani", "Bodhi", "Gianna", "River", "Keira", "Leif", "Ailani", "Seth", "Alison", "Otis", "Elaine", "Archer", 
+          "Freyja", "Bellamy", "Mercy", "Angelo", "Madilyn", "Jorge", "Ramona", "Paxton", "Frances", "Gunnar", "Dior", 
+          "Foster", "Hanna", "Cannon", "Aniya", "Jax", "Emelia", "Jackson", "Ashlyn", "Alonzo", "Esperanza", "Raiden", 
+          "Eliana", "Kylian", "Cheyenne", "Salem", "Brooklyn", "Eduardo", "Queen", "Winston", "Ada", "Dayton", "Drew", 
+          "Kieran", "Rowan", "Amos", "Makayla", "Tomas", "Katie", "Bryce", "Madeline", "Landon", "Presley", "Tyson", 
+          "Bristol", "Braylon", "Layne", "Kairo", "Sutton", "Edgar", "Lacey", "Nehemiah", "Valerie", "Moshe", "Etta", 
+          "Moshe", "Itzayana", "Asher", "Remy", "Charlie", "Maxine", "Blaze", "Nellie", "Bryan", "Saylor", "Harvey", 
+          "Angelica", "Jesus", "Paisleigh", "Jason", "Oaklee", "Ryan", "Sofia", "Thiago", "Allyson", "Vihaan", "Isabella", 
+          "Finnegan", "Daniella", "Jeffrey", "Jaylah", "Declan", "Elaine", "Walter", "Saylor", "Kiaan", "Denise", "Jett", 
+          "Jacqueline", "Marcelo", "Lila", "Asher", "Yareli", "Jett", "Alaiya", "Jax", "Katie", "Ridge", "Imani", "Levi", 
+          "Kinsley", "Emilio", "Karsyn", "Dario", "Daniella", "Watson", "Daleyza", "Saint", "Kai", "Nikolai", "Bianca", 
+          "Atreus", "Lina", "Chance", "Artemis", "Keenan", "Leila", "Ruben", "Kassidy", "Avi", "Marie", "Alejandro", 
+          "Elliot", "Kye", "Giselle", "Malachi", "Oaklyn", "Francisco", "Chana", "Alonso", "Kara", "Zaiden", "Lila", 
+          "Maddox", "Mia", "Russell", "Adaline", "Zion", "Denisse", "Niklaus", "Charley", "Brett",
+        ];
+    
+        let index = 0;
+    
+        function rotateNames() {
+          const buyer0 = document.getElementById("buyer0");
+          const buyer1 = document.getElementById("buyer1");
+          const buyer2 = document.getElementById("buyer2");
+    
+          buyer2.textContent = buyer1.textContent;
+          buyer1.textContent = buyer0.textContent;
+          buyer0.textContent = firstNames[index];
+    
+          index = (index + 1) % firstNames.length;
+        }
+    
+        setInterval(rotateNames, 1000);
+      </script>
     </div>
     
   </header>
