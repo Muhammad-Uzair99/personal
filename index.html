@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="border:0px; padding:0px; margin:0px; background-color:black;">
+<html>
   <head>
 	<meta charset='utf-8'/>
 	<title>Shopify Secret</title>
@@ -7,8 +7,18 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no' name='viewport'/>
     <link href='https://cdn.shopify.com/shopifycloud/web/assets/v1/favicon-default-6cbad9de243dbae3.ico' rel='icon' type='image/x-icon'/>
 	<script src="https://cdn.tailwindcss.com"></script>
+  <script>
+
+    let randomNumber;
+    do {
+      randomNumber = Math.floor(Math.random() * (2000 - 500 + 1) + 500);
+    } while (randomNumber % 2 === 0);
+
+    document.getElementById("randomNumber").textContent = randomNumber;
+
+  </script>
 </head>
-<body class='bg-[#010104] text-[#E8E8F5] text-center font-semibold relative flex flex-col justify-center items-center w-full'>
+<body class='bg-[#010104] text-[#E8E8F5] text-center font-semibold relative w-full'>
   
   <header class='w-full h-14 bg-[#010104] shadow shadow-[#E8E8F5] flex justify-center sticky top-0 z-50'>
     
@@ -47,21 +57,13 @@
     
   </header>
   
-  <main class='block w-[97%] max-w-[900px]'>
+  <main class='block w-[97%] max-w-[900px] mx-auto'>
+
     <section class='w-full'>
       <h1 class='text-3xl mt-4 mb-3'><span class='bg-gradient-to-r from-[#06F32D] via-[#77C16B] to-[#777332] inline-block text-transparent bg-clip-text'>Shopify Dropshipping Secret:</span> Your Shortcut to Financial Freedom</h1>
       <p class='text-sm m-0 mb-4 font-medium'>🔥 <span id='randomNumber'>547</span> Viewing Right Now! 🔥</p>
 
-  <script>
-      let randomNumber;
-      do {
-        randomNumber = Math.floor(Math.random() * (2000 - 500 + 1) + 500);
-      } while (randomNumber % 2 === 0);
-
-      document.getElementById("randomNumber").textContent = randomNumber;
-
-  </script>
-      <iframe allow='autoplay' class='w-full max-w-[870px] mx-auto aspect-video rounded-2xl shadow-md shadow-[#06F32D]' src='https://drive.google.com/file/d/1SCRBRgGw4EKkhFj9HP-JEvLucalbPjep/preview'/>
+      <iframe allow='autoplay' class='block w-full max-w-[870px] mx-auto aspect-video rounded-2xl shadow-md shadow-[#06F32D]' src='https://drive.google.com/file/d/1SCRBRgGw4EKkhFj9HP-JEvLucalbPjep/preview'></iframe>
     </section>
     
     <section class='w-full' id='learn'>
@@ -74,7 +76,7 @@
         <li class=''><span class='font-black'>Order Fulfillment:</span> Understand the logistics of dropshipping, and orders processing.</li>
       </ul>
     </section>
-    
+
     <section class='w-full'>
       <h2 class='text-3xl my-6'>Unleash Your Inner <em class='bg-gradient-to-r from-[#06F32D] via-[#77C16B] to-[#777332] inline-block text-transparent bg-clip-text'>Entrepreneur</em> and Build a Thriving Online Business.</h2>
       <p class='font-sm w-[90%] max-w-[870px] rounded-2xl bg-[#777332] text-[#E8E8F5] mx-auto p-4 shadow shadow-[#06F32D]'>Are you tired of the 9-to-5 grind and dreaming of a life where you&#39;re your own boss?<br/><em>Shopify Secret</em> is your blueprint to success. Learn how to turn your passion into profit by creating a stunning eCommerce store that attracts customers and converts sales.</p>
