@@ -10,12 +10,13 @@
   <script>
 
     let randomNumber;
-    do {
-      randomNumber = Math.floor(Math.random() * (2000 - 500 + 1) + 500);
-    } while (randomNumber % 2 === 0);
+      randomNumber = Math.floor(Math.random() * (1500 - 500 + 1) + 500);
 
-    document.getElementById("randomNumber").textContent = randomNumber;
-
+    function viewers () {
+      randomNumber = randomNumber + Math.floor(Math.random() * 5);
+      document.getElementById("randomNumber").textContent = randomNumber;
+    }
+    setInterval(viewers, 1500);
   </script>
 </head>
 <body class='bg-[#010104] text-[#E8E8F5] text-center font-semibold relative w-full flex flex-col justify-center items-center'>
