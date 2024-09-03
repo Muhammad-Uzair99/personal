@@ -4,7 +4,7 @@
 	<meta charset='utf-8'/>
 	<title>Shopify Secret</title>
   	<meta content='Try Shopify free and start a business or grow an existing one. Get more than ecommerce software with tools to manage every part of your business.' name='description'/>
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no' name='viewport'/>
+	  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no' name='viewport'/>
     <link href='https://cdn.shopify.com/shopifycloud/web/assets/v1/favicon-default-6cbad9de243dbae3.ico' rel='icon' type='image/x-icon'/>
 	<script src="https://cdn.tailwindcss.com"></script>
   <script src="https://www.digistore24-scripts.com/service/digistore.js"></script>
@@ -48,7 +48,7 @@
           </span>
         </li>
       </ul>
-      
+    <!--
 	    <ul class='text-[0.5rem] absolute right-0 top-10 w-28 leading-4' id='buyers-list'>
         <li class=''>
           🔥<span class='bg-gradient-to-b from-[#E8E8F5] via-[#E8E8F5] to-[#E8E8F5] inline-block text-transparent bg-clip-text'><span id='buyer0'>Alex</span> just bought!</span>🔥
@@ -121,6 +121,7 @@
     
         setInterval(rotateNames, 1000);
       </script>
+    -->
     </div>
     
   </header>
@@ -173,7 +174,34 @@
         </span>
       </button>
       <p>🔥 Hot Deal Expires Today! 🔥</p>
-      <p>🔥 1049 Sold &#9989; 51 Remaining 🔥</p>
+      <p class="text-3xl mt-3">🔥 <span id="timer">12:00:00</span> 🔥</p>
+      <script>
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = Math.floor(timer / 3600);
+                minutes = Math.floor((timer % 3600) / 60);
+                seconds = timer % 60;
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = hours + ":" + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0; // Stop the timer at 0
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            const twelveHoursInSeconds = 12 * 3600;
+            const display = document.getElementById('timer');
+            startTimer(twelveHoursInSeconds, display);
+        };
+    </script>
+
     </section>
     
     <section class='w-full'>
